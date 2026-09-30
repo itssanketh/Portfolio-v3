@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sanketh — Portfolio</title>
+<meta name="description" content="Sanketh — tech enthusiast and final-year BCA student. Websites, Spring Boot projects and skills.">
+<meta name="theme-color" content="#0b181c">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<meta property="og:title" content="Sanketh — Portfolio">
+<meta property="og:description" content="Tech enthusiast and final-year BCA student. Websites, Spring Boot projects and skills.">
+<meta property="og:image" content="img/me.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>matchMedia("(prefers-reduced-motion: reduce)").matches || document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<header class="nav">
+  <a href="#top" class="nav__name">Sanketh<span class="dot">.</span></a>
+  <nav aria-label="Sections">
+    <a href="#work">Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact" class="nav__cta">Say hello</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Intro">
+    <canvas class="flow" data-flow aria-hidden="true"></canvas>
+    <div class="hero__shade" aria-hidden="true"></div>
+
+    <div class="hero__grid">
+      <div class="hero__text">
+        <h1 class="hero__title" data-scrub="intro-letters" data-delay="0.35">Sanketh</h1>
+        <p class="hero__sub" data-scrub="intro-words" data-delay="0.75">A <em>tech enthusiast</em> and final-year BCA student.</p>
+        <a class="btn" href="#work"><span>View projects</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3.5 8.5 8 13l4.5-4.5"/></svg></a>
+      </div>
+
+      <!-- Portrait: img/me.webp (3:4; img/me.jpg is the source). The placeholder shows if the file is missing. -->
+      <figure class="portrait">
+        <div class="portrait__frame">
+          <div class="portrait__empty" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><circle cx="32" cy="24" r="11"/><path d="M12 56c2-11 10-17 20-17s18 6 20 17"/></svg>
+            <span>Your photo<br><code>img/me.jpg</code></span>
+          </div>
+          <img src="img/me.webp" alt="Portrait of Sanketh" width="672" height="896" fetchpriority="high" decoding="async"
+               onload="this.closest('.portrait').classList.add('has-photo')" onerror="this.remove()">
+        </div>
+        <figcaption>Java · Spring Boot · Web</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" aria-labelledby="about-h">
+    <h2 id="about-h" class="label">About</h2>
+    <p class="about__text" data-scrub="words">I do simple programming and logic writing for fun. Studying Core Java, learning Spring Boot, and most interested in backend development. I love picking up new technologies, and I enjoy teaching and helping others.</p>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="edu" aria-labelledby="edu-h">
+    <h2 id="edu-h" class="h2" data-scrub="letters">Education</h2>
+    <ol class="timeline">
+      <li class="tl is-done">
+        <span class="tl__dot" aria-hidden="true"></span>
+        <p class="tl__when">School</p>
+        <h3 class="tl__title">Anugraha English Medium School</h3>
+      </li>
+      <li class="tl is-done">
+        <span class="tl__dot" aria-hidden="true"></span>
+        <p class="tl__when">Pre-university (PUC)</p>
+        <h3 class="tl__title">SDM PU College</h3>
+      </li>
+      <li class="tl is-now">
+        <span class="tl__dot" aria-hidden="true"></span>
+        <p class="tl__when">Now · Final year</p>
+        <h3 class="tl__title">BCA, SDM Degree College</h3>
+      </li>
+    </ol>
+  </section>
+
+  <!-- WORK: a wheel you turn by scrolling (vanilla port of WorksWheel) -->
+  <section class="work" id="work" aria-labelledby="work-h">
+    <div class="work__head">
+      <h2 id="work-h" class="h2" data-scrub="letters">Selected websites</h2>
+      <p class="muted">Five sites, all live on Vercel. Each preview is a recording of the real site scrolling.</p>
+    </div>
+
+    <div class="wheel" data-wheel>
+      <div class="wheel__stage">
+        <div class="wheel__drum">
+          <article class="wk">
+            <a class="wk__card browser" href="https://drivedeep.vercel.app" target="_blank" rel="noopener" aria-label="Open Drivedeep">
+              <span class="browser__bar"><span class="lights"><i></i><i></i><i></i></span><span class="url">drivedeep.vercel.app</span></span>
+              <video muted loop playsinline preload="none" poster="video/drivedeep.webp"><source src="video/drivedeep-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="video/drivedeep.mp4" type="video/mp4"></video>
+            </a>
+            <div class="wk__info">
+              <h3>Drivedeep</h3>
+              <p>From carriage to supercar. The evolution of Ford's car shapes, told with scroll-driven transitions.</p>
+              <p class="tags">JavaScript · WebGL · Motion</p>
+              <div class="links"><a href="https://drivedeep.vercel.app" target="_blank" rel="noopener">Live site</a><a href="https://github.com/sanketh908/DriveDeep" target="_blank" rel="noopener">Code</a></div>
+            </div>
+          </article>
+          <article class="wk">
+            <a class="wk__card browser" href="https://vignesh-arts.vercel.app" target="_blank" rel="noopener" aria-label="Open VigneshArts">
+              <span class="browser__bar"><span class="lights"><i></i><i></i><i></i></span><span class="url">vignesh-arts.vercel.app</span></span>
+              <video muted loop playsinline preload="none" poster="video/vignesh.webp"><source src="video/vignesh-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="video/vignesh.mp4" type="video/mp4"></video>
+            </a>
+            <div class="wk__info">
+              <h3>VigneshArts</h3>
+              <p>A dark gallery portfolio for pencil sketches and portraiture.</p>
+              <p class="tags">HTML · CSS · JavaScript</p>
+              <div class="links"><a href="https://vignesh-arts.vercel.app" target="_blank" rel="noopener">Live site</a><a href="https://github.com/sanketh908/vignesh-Arts" target="_blank" rel="noopener">Code</a></div>
+            </div>
+          </article>
+          <article class="wk">
+            <a class="wk__card browser" href="https://minecraft-3d-website.vercel.app" target="_blank" rel="noopener" aria-label="Open Minecraft 3D">
+              <span class="browser__bar"><span class="lights"><i></i><i></i><i></i></span><span class="url">minecraft-3d-website.vercel.app</span></span>
+              <video muted loop playsinline preload="none" poster="video/minecraft.webp"><source src="video/minecraft-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="video/minecraft.mp4" type="video/mp4"></video>
+            </a>
+            <div class="wk__info">
+              <h3>Minecraft 3D</h3>
+              <p>Build anything. Survive everything. An unofficial fan showcase with 3D blocks.</p>
+              <p class="tags">TypeScript · 3D</p>
+              <div class="links"><a href="https://minecraft-3d-website.vercel.app" target="_blank" rel="noopener">Live site</a><a href="https://github.com/sanketh908/Minecraft_3D_website-" target="_blank" rel="noopener">Code</a></div>
+            </div>
+          </article>
+          <article class="wk">
+            <a class="wk__card browser" href="https://xpluse-3d-website.vercel.app" target="_blank" rel="noopener" aria-label="Open XPulse 200 4V">
+              <span class="browser__bar"><span class="lights"><i></i><i></i><i></i></span><span class="url">xpluse-3d-website.vercel.app</span></span>
+              <video muted loop playsinline preload="none" poster="video/xpulse.webp"><source src="video/xpulse-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="video/xpulse.mp4" type="video/mp4"></video>
+            </a>
+            <div class="wk__info">
+              <h3>XPulse 200 4V</h3>
+              <p>Taken apart. An adventure motorcycle you can rotate and pull to pieces as you scroll.</p>
+              <p class="tags">HTML · 3D</p>
+              <div class="links"><a href="https://xpluse-3d-website.vercel.app" target="_blank" rel="noopener">Live site</a><a href="https://github.com/sanketh908/Xpluse_3D_Website" target="_blank" rel="noopener">Code</a></div>
+            </div>
+          </article>
+          <article class="wk">
+            <a class="wk__card browser" href="https://hollowkight3dwebsite.vercel.app" target="_blank" rel="noopener" aria-label="Open Hollow Knight">
+              <span class="browser__bar"><span class="lights"><i></i><i></i><i></i></span><span class="url">hollowkight3dwebsite.vercel.app</span></span>
+              <video muted loop playsinline preload="none" poster="video/hollow.webp"><source src="video/hollow-sm.mp4" type="video/mp4" media="(max-width: 700px)"><source src="video/hollow.mp4" type="video/mp4"></video>
+            </a>
+            <div class="wk__info">
+              <h3>Hollow Knight</h3>
+              <p>Descend into Hallownest. A moody 3D tribute to the game.</p>
+              <p class="tags">TypeScript · 3D</p>
+              <div class="links"><a href="https://hollowkight3dwebsite.vercel.app" target="_blank" rel="noopener">Live site</a><a href="https://github.com/sanketh908/Hollow-kight-3D-website-" target="_blank" rel="noopener">Code</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <p class="wheel__label" aria-hidden="true"><span data-scrub="letters">Works <em>'26</em></span></p>
+      <div class="wheel__info"></div>
+      <ol class="wheel__index" aria-label="Projects"></ol>
+    </div>
+
+    <div class="java">
+      <h3 class="java__h" data-scrub="letters">Java &amp; Spring Boot on GitHub</h3>
+      <ul class="java__list">
+        <li><a href="https://github.com/sanketh908/ResourceManagementSystem" target="_blank" rel="noopener"><span>Resource Management System</span><em>Spring Boot</em></a></li>
+        <li><a href="https://github.com/sanketh908/Library_Managment_System" target="_blank" rel="noopener"><span>Library Management System</span><em>Spring Boot</em></a></li>
+        <li><a href="https://github.com/sanketh908/Employee_Management_System" target="_blank" rel="noopener"><span>Employee Management System</span><em>Spring Boot</em></a></li>
+        <li><a href="https://github.com/sanketh908/QuizApp" target="_blank" rel="noopener"><span>Quiz App</span><em>Spring Boot</em></a></li>
+        <li><a href="https://github.com/sanketh908/WeatherApp" target="_blank" rel="noopener"><span>Weather App</span><em>Spring Boot</em></a></li>
+        <li><a href="https://github.com/sanketh908/AI-chatbot_Comic" target="_blank" rel="noopener"><span>AI Chatbot</span><em>Spring Boot</em></a></li>
+        <li><a href="https://github.com/sanketh908/TODO_LIST" target="_blank" rel="noopener"><span>To-do List</span><em>Spring Boot</em></a></li>
+        <li><a href="https://github.com/sanketh908/Guess_the_number_game" target="_blank" rel="noopener"><span>Guess the Number</span><em>Android</em></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SKILLS: each tile reveals its own photo on hover -->
+  <section class="skills" id="skills" aria-labelledby="skills-h">
+    <h2 id="skills-h" class="h2" data-scrub="letters">What I work with</h2>
+    <ul class="bento">
+      <li class="tile tile--big" style="--img:url(img/skills/java.webp)"><i style="--icon:url(img/icons/java.svg)"></i><div><span class="label">Language</span><h3>Java</h3></div></li>
+      <li class="tile tile--wide" style="--img:url(img/skills/mysql.webp);--fit:contain;--fill:#0c0b0e"><i style="--icon:url(img/icons/mysql.svg)"></i><div><span class="label">Database</span><h3>MySQL</h3></div></li>
+      <li class="tile" style="--img:url(img/skills/php.webp)"><i style="--icon:url(img/icons/php.svg)"></i><div><span class="label">Language</span><h3>PHP</h3></div></li>
+      <li class="tile" style="--img:url(img/skills/linux.webp)"><i style="--icon:url(img/icons/linux.svg)"></i><div><span class="label">OS</span><h3>Linux</h3></div></li>
+      <li class="tile" style="--img:url(img/skills/html.webp)"><i style="--icon:url(img/icons/html5.svg)"></i><div><span class="label">Markup</span><h3>HTML</h3></div></li>
+      <li class="tile" style="--img:url(img/skills/css.webp)"><i style="--icon:url(img/icons/css.svg)"></i><div><span class="label">Styling</span><h3>CSS</h3></div></li>
+      <li class="tile" style="--img:url(img/skills/js.webp)"><i style="--icon:url(img/icons/javascript.svg)"></i><div><span class="label">Language</span><h3>JavaScript</h3></div></li>
+      <li class="tile" style="--img:url(img/skills/git.webp)"><i style="--icon:url(img/icons/git.svg)"></i><div><span class="label">Tooling</span><h3>Git</h3></div></li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <canvas class="flow" data-flow aria-hidden="true"></canvas>
+    <div class="contact__shade" aria-hidden="true"></div>
+    <div class="contact__inner">
+      <p class="label">Contact</p>
+      <h2 id="contact-h" class="contact__h" data-scrub="letters">Say <em>hello</em></h2>
+      <a class="contact__mail" href="mailto:sankeths908@gmail.com">sankeths908@gmail.com</a>
+      <ul class="socials">
+        <li><a class="soc" style="--brand:#f0f6fc" href="https://github.com/sanketh908" target="_blank" rel="noopener"><i style="--icon:url(img/social/github.svg)"></i><span>GitHub</span><em>sanketh908</em></a></li>
+        <li><a class="soc soc--ig" style="--brand:#e1306c" href="https://instagram.com/sanketh507_" target="_blank" rel="noopener"><i style="--icon:url(img/social/instagram.svg)"></i><span>Instagram</span><em>sanketh507_</em></a></li>
+        <li><a class="soc" style="--brand:#0a66c2" href="https://www.linkedin.com/in/sanketh-s-965947397" target="_blank" rel="noopener"><i style="--icon:url(img/social/linkedin.svg)"></i><span>LinkedIn</span><em>sanketh-s</em></a></li>
+        <li><a class="soc" style="--brand:#e7e9ea" href="https://x.com/Sanketh507" target="_blank" rel="noopener"><i style="--icon:url(img/social/x.svg)"></i><span>X</span><em>Sanketh507</em></a></li>
+        <li><a class="soc" style="--brand:#f58025" href="https://stackoverflow.com/users/32307647/sanketh-s?tab=profile" target="_blank" rel="noopener"><i style="--icon:url(img/social/stackoverflow.svg)"></i><span>Stack Overflow</span><em>sanketh-s</em></a></li>
+        <li><a class="soc" style="--brand:#ff4500" href="https://www.reddit.com/u/Guilty_Way_4516/s/Fm0r9OfZtH" target="_blank" rel="noopener"><i style="--icon:url(img/social/reddit.svg)"></i><span>Reddit</span><em>Guilty_Way_4516</em></a></li>
+      </ul>
+      <footer class="foot">
+        <span>© <span data-year>2026</span> Sanketh. All rights reserved.</span>
+        <a href="#top">Back to top</a>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js" defer></script>
+<script src="flow.js" defer></script>
+<script src="main.js" defer></script>
+</body>
+</html>
