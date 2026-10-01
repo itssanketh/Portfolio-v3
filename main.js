@@ -7,36 +7,31 @@ const lerp = (a, b, t) => a + (b - a) * t;
 const year = $("[data-year]");
 if (year) year.textContent = new Date().getFullYear();
 
-// Skills: one row open at a time. Hover opens it on desktop (its details show in the panel under
-// the intro, so the list never shifts under the pointer); tap or keyboard opens it anywhere.
-const xp = $(".xp");
-if (xp) {
-  const rows = $$(".xp__row", xp), intro = $(".xp__intro");
-  const panel = matchMedia("(min-width: 900px) and (hover: hover)");
-  const open = (row) => rows.forEach((r) => {
-    r.classList.toggle("is-open", r === row);
-    $(".xp__head", r).setAttribute("aria-expanded", r === row);
+// Skill chips are glass drops: light blooms from wherever the pointer is, and entering one sends
+// a ripple ring through it. On touch screens (no hover) each chip lights while it crosses the
+// middle of the screen.
+const chips = $$(".chip");
+const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+chips.forEach((c) => {
+  const at = (e) => {
+    const r = c.getBoundingClientRect();
+    c.style.setProperty("--x", `${e.clientX - r.left}px`);
+    c.style.setProperty("--y", `${e.clientY - r.top}px`);
+  };
+  c.addEventListener("pointermove", at);
+  c.addEventListener("pointerenter", (e) => {
+    at(e);
+    if (calm) return;
+    const ring = document.createElement("span");
+    ring.className = "chip__ripple";
+    ring.addEventListener("animationend", () => ring.remove());
+    c.append(ring);
   });
-  rows.forEach((r) => {
-    $(".xp__head", r).addEventListener("click", () => open(panel.matches || !r.classList.contains("is-open") ? r : null));
-    r.addEventListener("pointerenter", () => panel.matches && open(r));
-    const head = $(".xp__head", r);
-    head.addEventListener("pointermove", (e) => {
-      const b = head.getBoundingClientRect();
-      head.style.setProperty("--x", `${e.clientX - b.left}px`);
-      head.style.setProperty("--y", `${e.clientY - b.top}px`);
-    });
-  });
-  // the panel sits in the left column, just under the intro (each body is placed from its own row)
-  const place = () => rows.forEach((r) => {
-    r.style.setProperty("--py", `${intro.offsetTop + intro.offsetHeight + 40 - r.offsetTop}px`);
-    r.style.setProperty("--px", `${intro.offsetLeft - r.offsetLeft}px`);
-    r.style.setProperty("--pw", `${intro.offsetWidth}px`);
-  });
-  const ro = new ResizeObserver(place);
-  ro.observe(intro); ro.observe(xp);
-  if (!matchMedia("(hover: hover)").matches) $(".xp__hint").lastChild.textContent = "Tap to explore";
-  open(rows[0]);
+});
+if (matchMedia("(hover: none)").matches) {
+  const litIO = new IntersectionObserver((entries) => entries.forEach((e) => e.target.classList.toggle("is-lit", e.isIntersecting)),
+    { rootMargin: "-38% 0px -38% 0px" });
+  chips.forEach((c) => litIO.observe(c));
 }
 
 // Static fallback (no GSAP, or reduced motion): plain list, previews play while visible.
@@ -254,9 +249,10 @@ if (!window.gsap || !root.classList.contains("js")) {
       { opacity: 1, x: 0, y: 0, rotationX: 0, rotationY: 0, rotate: 0, scale: 1, ease: "power2.out",
         scrollTrigger: { trigger: el, start, end, scrub: 0.6 } });
   });
+  fly($$(".chip"));
   fly($$(".socials li"), "top 102%", "top 75%");
   // cheap whole-row reveals where per-letter assembly wasn't worth its cost
-  $$(".java__list li, .xp__row").forEach((li, i) => gsap.fromTo(li, { opacity: 0, x: i % 2 ? 120 : -120 },
+  $$(".java__list li").forEach((li, i) => gsap.fromTo(li, { opacity: 0, x: i % 2 ? 120 : -120 },
     { opacity: 1, x: 0, ease: "power2.out", scrollTrigger: { trigger: li, start: "top 98%", end: "top 70%", scrub: 0.6 } }));
 
   /* ---------- Education timeline: the line draws itself, steps light up ---------- */
