@@ -54,7 +54,7 @@ Portfolio-v3/
 ## ⚙️ Run Locally
 
 ```bash
-git clone https://github.com/sanketh908/Portfolio-v3.git
+git clone https://github.com/itssanketh/Portfolio-v3.git
 cd Portfolio-v3
 ```
 
@@ -68,7 +68,7 @@ Then visit `http://localhost:8000`.
 
 ## 📬 Contact
 
-- GitHub: [@sanketh908](https://github.com/sanketh908)
+- GitHub: [@itssanketh](https://github.com/itssanketh)
 - LinkedIn: [https://www.linkedin.com/in/sanketh-s-965947397]
 - Email: [your-email]
 
