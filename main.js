@@ -7,33 +7,6 @@ const lerp = (a, b, t) => a + (b - a) * t;
 const year = $("[data-year]");
 if (year) year.textContent = new Date().getFullYear();
 
-// Skill chips are glass drops: light blooms from wherever the pointer is, and entering one sends
-// a ripple ring through it. On touch screens (no hover) each chip lights while it crosses the
-// middle of the screen.
-const chips = $$(".chip");
-const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
-chips.forEach((c) => {
-  const at = (e) => {
-    const r = c.getBoundingClientRect();
-    c.style.setProperty("--x", `${e.clientX - r.left}px`);
-    c.style.setProperty("--y", `${e.clientY - r.top}px`);
-  };
-  c.addEventListener("pointermove", at);
-  c.addEventListener("pointerenter", (e) => {
-    at(e);
-    if (calm) return;
-    const ring = document.createElement("span");
-    ring.className = "chip__ripple";
-    ring.addEventListener("animationend", () => ring.remove());
-    c.append(ring);
-  });
-});
-if (matchMedia("(hover: none)").matches) {
-  const litIO = new IntersectionObserver((entries) => entries.forEach((e) => e.target.classList.toggle("is-lit", e.isIntersecting)),
-    { rootMargin: "-38% 0px -38% 0px" });
-  chips.forEach((c) => litIO.observe(c));
-}
-
 // Static fallback (no GSAP, or reduced motion): plain list, previews play while visible.
 const playWhileVisible = (videos) => {
   const io = new IntersectionObserver((entries) => entries.forEach(({ target: v, isIntersecting }) => {
@@ -249,11 +222,8 @@ if (!window.gsap || !root.classList.contains("js")) {
       { opacity: 1, x: 0, y: 0, rotationX: 0, rotationY: 0, rotate: 0, scale: 1, ease: "power2.out",
         scrollTrigger: { trigger: el, start, end, scrub: 0.6 } });
   });
-  fly($$(".chip"));
+  fly([$(".shelf"), $(".cards")]);
   fly($$(".socials li"), "top 102%", "top 75%");
-  // cheap whole-row reveals where per-letter assembly wasn't worth its cost
-  $$(".java__list li").forEach((li, i) => gsap.fromTo(li, { opacity: 0, x: i % 2 ? 120 : -120 },
-    { opacity: 1, x: 0, ease: "power2.out", scrollTrigger: { trigger: li, start: "top 98%", end: "top 70%", scrub: 0.6 } }));
 
   /* ---------- Education timeline: the line draws itself, steps light up ---------- */
   const tl = $(".timeline");

@@ -18,7 +18,7 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 <script>matchMedia("(prefers-reduced-motion: reduce)").matches || document.documentElement.classList.add("js")</script>
 </head>
 <body>
@@ -192,7 +192,11 @@
 
     <div class="java">
       <h3 class="java__h" data-scrub="letters">Java &amp; Spring Boot on GitHub</h3>
-      <ul class="java__list">
+      <div class="cards">
+        <div class="cards__stage" data-hairline-host="cards"></div>
+        <p class="shelf__read" data-hairline-read aria-hidden="true">hover a card · click to open</p>
+      </div>
+      <ul class="java__list sr-only">
         <li><a href="https://github.com/itssanketh/ResourceManagementSystem" target="_blank" rel="noopener"><span>Resource Management System</span><em>Spring Boot</em></a></li>
         <li><a href="https://github.com/itssanketh/Library_Managment_System" target="_blank" rel="noopener"><span>Library Management System</span><em>Spring Boot</em></a></li>
         <li><a href="https://github.com/itssanketh/Employee_Management_System" target="_blank" rel="noopener"><span>Employee Management System</span><em>Spring Boot</em></a></li>
@@ -201,22 +205,21 @@
         <li><a href="https://github.com/itssanketh/AI-chatbot_Comic" target="_blank" rel="noopener"><span>AI Chatbot</span><em>Spring Boot</em></a></li>
         <li><a href="https://github.com/itssanketh/TODO_LIST" target="_blank" rel="noopener"><span>To-do List</span><em>Spring Boot</em></a></li>
         <li><a href="https://github.com/itssanketh/Guess_the_number_game" target="_blank" rel="noopener"><span>Guess the Number</span><em>Android</em></a></li>
+        <li><a href="https://github.com/itssanketh/CarDetector_app" target="_blank" rel="noopener"><span>Car Detector</span><em>Android</em></a></li>
       </ul>
     </div>
   </section>
 
-  <!-- SKILLS: glass drops; light blooms through each one under the pointer -->
+  <!-- SKILLS: a hairline bookshelf, one book per tool; the one under the pointer slides forward -->
   <section class="skills" id="skills" aria-labelledby="skills-h">
     <h2 id="skills-h" class="h2" data-scrub="letters">What I work with</h2>
-    <ul class="chips">
-      <li class="chip" style="--glow:#f89820"><i style="--icon:url(img/icons/java.svg)"></i><span class="chip__name">Java</span><span class="chip__kind">Language</span></li>
-      <li class="chip" style="--glow:#3ea6c9"><i style="--icon:url(img/icons/mysql.svg)"></i><span class="chip__name">MySQL</span><span class="chip__kind">Database</span></li>
-      <li class="chip" style="--glow:#8f9bd6"><i style="--icon:url(img/icons/php.svg)"></i><span class="chip__name">PHP</span><span class="chip__kind">Language</span></li>
-      <li class="chip" style="--glow:#f5c518"><i style="--icon:url(img/icons/linux.svg)"></i><span class="chip__name">Linux</span><span class="chip__kind">OS</span></li>
-      <li class="chip" style="--glow:#e8592e"><i style="--icon:url(img/icons/html5.svg)"></i><span class="chip__name">HTML</span><span class="chip__kind">Markup</span></li>
-      <li class="chip" style="--glow:#3b8fe0"><i style="--icon:url(img/icons/css.svg)"></i><span class="chip__name">CSS</span><span class="chip__kind">Styling</span></li>
-      <li class="chip" style="--glow:#f0d91a"><i style="--icon:url(img/icons/javascript.svg)"></i><span class="chip__name">JavaScript</span><span class="chip__kind">Language</span></li>
-      <li class="chip" style="--glow:#f05032"><i style="--icon:url(img/icons/git.svg)"></i><span class="chip__name">Git</span><span class="chip__kind">Tooling</span></li>
+    <div class="shelf">
+      <div class="shelf__stage" data-hairline-host="shelf"></div>
+      <p class="shelf__read" data-hairline-read aria-hidden="true">hover a book</p>
+    </div>
+    <ul class="sr-only">
+      <li>Java, language</li><li>MySQL, database</li><li>PHP, language</li><li>Linux, OS</li>
+      <li>HTML, markup</li><li>CSS, styling</li><li>JavaScript, language</li><li>Git, tooling</li>
     </ul>
   </section>
 
@@ -247,7 +250,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js" defer></script>
-<script src="flow.js" defer></script>
-<script src="main.js" defer></script>
+<script src="flow.js?v=3" defer></script>
+<script src="main.js?v=3" defer></script>
+<script src="hairline.js?v=3" defer></script>
+<script src="shelf.js?v=3" type="module"></script>
+<script src="cards.js?v=3" type="module"></script>
 </body>
 </html>
