@@ -70,7 +70,7 @@ Then visit `http://localhost:8000`.
 
 - GitHub: [@itssanketh](https://github.com/itssanketh)
 - LinkedIn: [https://www.linkedin.com/in/sanketh-s-965947397]
-- Email: [your-email]
+- Email: sanekths908@gmail.com
 
 ---
 
